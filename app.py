@@ -1,5 +1,5 @@
 import streamlit as st
-import serpapi
+from serpapi import GoogleSearch
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -15,7 +15,7 @@ def compare(name):
     "gl" : "in"
     }
 
-    search = serpapi.GoogleSearch(params)
+    search = GoogleSearch(params)
     results = search.get_dict()
     shopping_results = results["shopping_results"]
     return(shopping_results)
